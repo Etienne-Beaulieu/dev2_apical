@@ -6670,6 +6670,10 @@ textarea.form-control {
     width: 100%
 }
 
+ol{
+    list-style: none;
+}
+
 @media (min-width: 576px) {
     .form-inline label {
         display:-ms-flexbox;
