@@ -73,7 +73,7 @@
                 <div class="avant"></div>
                 <div class="apres">
                     <div id="menuicones" class="porteuroffset fix-menu" data-verticaloffset="47" data-horizontaloffset="0">
-                        <a href="https://apical.xyz"><img
+                        <a href="index.php"><img
                                 src="https://apical.xyz/medias/commun/Accueil-MenuSecondaire.svg" alt="Accueil"
                                 title="Accueil"></a>
                         <a href="#" class="ouvrirpopupchristiane ouvrirpopuprecherche" data-target="#popuprecherche"><img
