@@ -99,34 +99,26 @@
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4">
-                            <a href="https://apical.xyz/formations"
-                                class="nav-link text-uppercase text-expanded active">Formations <span
-                                class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item px-lg-4">
-                            <a href="https://apical.xyz/articles" class="nav-link text-uppercase text-expanded">Blogue</a>
-                        </li>
-                        <li class="nav-item px-lg-4 dropdown">
-                            <a href="https://apical.xyz/pages/formulairebcrypt"
-                                class="dropdown-toggle nav-link text-uppercase text-expanded" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Outils</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="https://apical.xyz/pages/formulairebcrypt">Hachage bcrypt</a>
-                                <a class="dropdown-item" href="https://apical.xyz/pages/aleatoire">Générateur aléatoire</a>
-                                <a class="dropdown-item" href="https://apical.xyz/pages/fontAwesome">Icônes Font Awesome</a>
-                            </div>
-                        </li>
-                        <li class="nav-item px-lg-4 dropdown">
-                            <a href="https://apical.xyz/contact"
-                                class="dropdown-toggle nav-link text-uppercase text-expanded" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Aide</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="https://apical.xyz/contact">Contact</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="https://apical.xyz/apropos">À propos</a>
-                            </div>
-                        </li>
+                        <?php
+                        // Create a custom WordPress query to retrieve pages
+                        $args = array(
+                            'post_type' => 'page', // Query pages
+                            'posts_per_page' => -1, // Display all pages
+                            'order' => 'ASC' // Order by ascending
+                        );
+
+                        $pages_query = new WP_Query($args);
+
+                        while ($pages_query->have_posts()) : $pages_query->the_post();
+                        ?>
+                            <li class="nav-item px-lg-4">
+                                <a href="<?php the_permalink(); ?>" class="nav-link text-uppercase text-expanded">
+                                    <?php the_title(); ?>
+                                </a>
+                            </li>
+                        <?php endwhile;
+                        wp_reset_postdata(); // Reset the query
+                        ?>
                     </ul>
                 </div>
             </div>

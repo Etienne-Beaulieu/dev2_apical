@@ -19102,7 +19102,8 @@ html {
 
 #mainNav .navbar-nav .nav-item .nav-link {
     color: #585656;
-    font-weight: inherit
+    font-weight: inherit;
+    background: none;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link:hover {
